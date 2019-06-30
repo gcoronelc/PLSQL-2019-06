@@ -6,7 +6,6 @@ alter user scott
 identified by tiger
 account unlock;
 
-
 connect scott/tiger
 
 
@@ -17,7 +16,6 @@ connect system/oracle
 alter user hr 
 identified by hr
 account unlock;
-
 
 connect hr/hr
 
