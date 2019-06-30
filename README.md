@@ -60,6 +60,7 @@
 - Creación del esquema EUREKA: http://gcoronelc.blogspot.pe/2014/11/creacion-del-esquema-eureka.html
 - Cursores con JDBC: http://gcoronelc.blogspot.pe/2014/05/java-jdbc-oracle-cursor.html
 - PL/SQL Language Reference: https://docs.oracle.com/cd/B28359_01/appdev.111/b28370/toc.htm
+- Instalación de Oracle XE 11g R2: https://youtu.be/oQ5RTubYrUI
 
 ## APLICACIONES JAVA CON BASE DE DATOS EUREKA 
 
