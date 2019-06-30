@@ -15,8 +15,10 @@ end;
 /
 
 
-select scott.fn_suma( 56, 43 ) suma
+select scott.fn_suma( 56, 43 ) suma 
 from dual;
+
+select * from dual;
 
 
 -- Ejercicio 01
