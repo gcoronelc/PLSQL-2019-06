@@ -1,0 +1,53 @@
+CARGAR LA CONSOLA
+-----------------------------------------------------
+
+> SQLPLUS
+  Te solicita usuario y clave
+	
+> SQLPLUS /nolog
+  Se carga la consola sin conexión a una BD
+
+> SQLPLUS <usuario>/<clave>
+  Se carga la consola con una conexión especifica.
+
+  
+COMANDOS DE SQL*PLUS
+-----------------------------------------------------
+
+> conn[ect] <usuario>/<clave>
+
+> disc[onnect]
+
+> exit
+
+> clear screen
+
+CONEXION LOCAL
+-----------------------------------------------------
+
+> connect <usuario>/<clave>
+  No necesita del listener.
+  
+  
+CONEXION REMOTA
+-----------------------------------------------------
+
+> CONNECT <usuario>/<clave>@<servidor remoto>
+  
+Ejemplo 1: Formato Corto
+
+> connect system/oracle@172.17.2.242:1521/orcl.uni.pe
+
+Ejemplo 2: Usando TNS Name
+
+> connect system/oracle@SUPER
+  
+Ejemplo 2: Formato Extendido
+
+> connect system/oracle@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 172.17.2.242)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = orcl.uni.pe)))  
+  
+
+
+
+
+  

@@ -1,3 +1,12 @@
 CLASE 01
 -----------------------------------------
-1.- Clonación del repoaitorio
+1.- Clonación del repositorio
+2.- Instalación de Oracle
+3.- Asesoramiento (AnyDesk)
+4.- Modulo 01: Fundamentos de Oracle
+5.- Herramientas de Trabajo
+6.- Modulo 02: Esquemas de trabajo
+7.- Modulo 03: Fundamentos de Lenguaje
+
+
+
