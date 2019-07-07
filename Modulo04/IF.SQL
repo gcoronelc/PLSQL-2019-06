@@ -121,3 +121,7 @@ Se necesita saber el promedio y la nota que no se promedia.
 
 
 
+
+
+
+

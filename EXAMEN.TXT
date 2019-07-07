@@ -1,0 +1,21 @@
+EXAMEN
+=========================
+
+Presentar una caso
+
+- Explicar el caso (6 tablas mínimo)
+- Modelar el caso 
+- Generar el script de creación del esquema
+- Script de carga de datos
+- Programar un Paquete de un CRUD
+- Programar un proceso simple (Transacción)
+- Consulta de resumen de datos 
+  (2 consultas complejas de varias tablas con SP y Tablas Temporales)
+- Proceso complejo. Transacción para procesar varias filas.
+  Ejemplo: factura con varios items, esquema: VENTAS.
+  
+  
+
+GRUPOS DE MAXIMO 3 PARTICIPANTES
+
+
