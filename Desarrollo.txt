@@ -8,7 +8,8 @@ CLASE 01
 6.- Modulo 02: Esquemas de trabajo
 7.- Modulo 03: Fundamentos de Lenguaje
 8.- Modulo 04: Estructuras de Control
-9.- Modulo 06: Excepciones
+9.- Modulo 05: Estructuras de datos
+10.- Modulo 06: Excepciones
 
 
 
