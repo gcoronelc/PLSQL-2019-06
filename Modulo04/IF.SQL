@@ -73,3 +73,51 @@ end;
 select scott.egcc_mayor(123,65,143) from dual;
 
 select scott.egcc_mayor(-123,-65,-143) from dual;
+
+
+create or replace function scott.egcc_clasifica_salario
+( p_empno scott.emp.empno%type )
+return varchar2
+is
+  v_salario  scott.emp.sal%type;
+  v_rpta     varchar2(100);
+begin
+  -- Obtener salario
+  select sal into v_salario
+  from scott.emp
+  where empno = p_empno;
+  -- Proceso
+  if v_salario <= 2500.0 then
+    v_rpta := 'Salario Bajo';
+  elsif v_salario <= 4000.0 then
+    v_rpta := 'Salario Regular';
+  else
+    v_rpta := 'Salario Bueno';
+  end if;
+  -- Repuesta
+  return v_rpta;
+end;
+/
+
+select * from scott.emp;
+
+select scott.egcc_clasifica_salario(7698) from dual;
+
+select scott.egcc_clasifica_salario(7499) from dual;
+
+
+-- Ejercicio IF
+/*
+Desarrollar un procedimiento que permita encontrar el promedio de un 
+alumno de PL/SQL, se sabe que son 4 notas, y se promedian las 3 mejores.
+Se necesita saber el promedio y la nota que no se promedia.
+*/
+
+
+
+
+
+
+
+
+
