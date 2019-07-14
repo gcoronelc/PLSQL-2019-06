@@ -1,0 +1,16 @@
+create or replace procedure eureka.get_cuentas
+(p_cursor out nocopy sys_refcursor)
+is
+begin
+  open p_cursor for
+select  mov.chr_cuencodigo,  mov.int_movinumero, mov.dtt_movifecha, 
+    tipom.vch_tipodescripcion, mon.vch_monedescripcion, mov.dec_moviimporte
+from EUREKA.movimiento mov
+left join EUREKA.tipomovimiento tipom 
+		on (mov.chr_tipocodigo = tipom.chr_tipocodigo)
+left join EUREKA.cuenta cuen 
+		ON (mov.chr_cuencodigo = cuen.chr_cuencodigo)
+left join eureka.moneda mon 
+		on (cuen.chr_monecodigo = mon.chr_monecodigo);
+end;
+/

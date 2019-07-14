@@ -16,6 +16,17 @@ CLASE 02
 
 CLASE 03
 -----------------------------------------
+11.- Cursores
+12.- SQL en PL/SQL 
+
+
+
+
+CLASE 04
+----------------------------------------
+- Database Link
+- Sinonimos
+
 
 
 

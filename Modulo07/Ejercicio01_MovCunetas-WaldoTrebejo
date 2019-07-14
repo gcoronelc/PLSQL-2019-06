@@ -1,0 +1,20 @@
+CREATE OR REPLACE PROCEDURE EUREKA.MOVIMIENTO_CUENTAS
+(p_cuenta OUT NOCOPY sys_refcursor)
+IS
+BEGIN
+
+  OPEN p_cuenta FOR
+  
+  SELECT  m.chr_cuencodigo,  
+          m.int_movinumero,
+          m.dtt_movifecha, 
+          tip.vch_tipodescripcion, 
+          mon.vch_monedescripcion, 
+          m.dec_moviimporte
+  FROM EUREKA.movimiento m
+    LEFT JOIN EUREKA.tipomovimiento tip ON (mov.chr_tipocodigo = tipom.chr_tipocodigo)
+    LEFT JOIN EUREKA.cuenta cuen ON (mov.chr_cuencodigo = cuen.chr_cuencodigo)
+    LEFT JOIN eureka.moneda mon ON (cuen.chr_monecodigo = mon.chr_monecodigo);
+    
+END;
+/
