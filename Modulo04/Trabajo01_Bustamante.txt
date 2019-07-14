@@ -1,0 +1,28 @@
+;
+create or replace procedure sp_promediar_notas
+(p_n1 number, p_n2 number, p_n3 number, p_n4 number)
+is
+    v_promedio number;
+    v_nota_men number;
+    
+begin
+    
+    v_nota_men := p_n1;
+    if p_n2 < v_nota_men then
+        v_nota_men := p_n2;
+    end if;
+    if p_n3 < v_nota_men then
+        v_nota_men := p_n3;
+    end if;
+    if p_n4 < v_nota_men then
+        v_nota_men := p_n4;
+    end if;
+    v_promedio := (p_n1 + p_n2 + p_n3 + p_n4 -  v_nota_men)/3; 
+    DBMS_OUTPUT.PUT_LINE(v_promedio);
+    DBMS_OUTPUT.PUT_LINE(v_nota_men);
+    --return v_promedio;    
+end;
+
+begin
+sp_promediar_notas(80,150,20,-5);
+end;
