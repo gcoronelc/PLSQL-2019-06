@@ -16,9 +16,10 @@ CLASE 02
 
 CLASE 03
 -----------------------------------------
-11.- Cursores
-12.- SQL en PL/SQL 
-
+11.- Modulo 07: Cursores
+12.- Modulo 08: SQL en PL/SQL 
+13.- Modulo 09: Funciones y Procedimientos
+14.- Modulo 10: Pauqtes 
 
 
 
