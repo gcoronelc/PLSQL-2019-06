@@ -1,0 +1,153 @@
+create or replace package pack_mant_cli
+is
+procedure sp_agregar(
+  p_cliente_id T_CLIENTE.CLIENTE_ID%TYPE,
+  p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE,
+  p_nombre T_CLIENTE.NOMBRE%TYPE,
+  p_apellidos T_CLIENTE.APELLIDOS%TYPE,
+  p_sexo T_CLIENTE.SEXO%TYPE,
+  p_fechanacimiento T_CLIENTE.FECHANACIMIENTO%TYPE,
+  p_telefono T_CLIENTE.TELEFONO%TYPE,
+  p_email T_CLIENTE.EMAIL%TYPE,
+  p_estado T_CLIENTE.ESTADO%TYPE,
+  p_direccion T_CLIENTE.DIRECCION%TYPE,
+  p_iddepa T_CLIENTE.IDDEPA%TYPE,
+  p_idprov T_CLIENTE.IDPROV%TYPE,
+  p_iddist T_CLIENTE.IDDIST%TYPE
+);
+procedure sp_eliminar (p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE);
+procedure sp_modificar(
+  p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE,
+  p_telefono T_CLIENTE.TELEFONO%TYPE,
+  p_email T_CLIENTE.EMAIL%TYPE,
+  p_direccion T_CLIENTE.DIRECCION%TYPE,
+  p_iddepa T_CLIENTE.IDDEPA%TYPE,
+  p_idprov T_CLIENTE.IDPROV%TYPE,
+  p_iddist T_CLIENTE.IDDIST%TYPE);
+procedure sp_consulta (p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE);
+end pack_mant_cli;
+
+
+
+--creando el cuerpo del package
+create or replace package body pack_mant_cli
+is
+  --AGREGAR CLIENTE
+  procedure sp_agregar(
+    p_cliente_id T_CLIENTE.CLIENTE_ID%TYPE,
+    p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE,
+    p_nombre T_CLIENTE.NOMBRE%TYPE,
+    p_apellidos T_CLIENTE.APELLIDOS%TYPE,
+    p_sexo T_CLIENTE.SEXO%TYPE,
+    p_fechanacimiento T_CLIENTE.FECHANACIMIENTO%TYPE,
+    p_telefono T_CLIENTE.TELEFONO%TYPE,
+    p_email T_CLIENTE.EMAIL%TYPE,
+    p_estado T_CLIENTE.ESTADO%TYPE,
+    p_direccion T_CLIENTE.DIRECCION%TYPE,
+    p_iddepa T_CLIENTE.IDDEPA%TYPE,
+    p_idprov T_CLIENTE.IDPROV%TYPE,
+    p_iddist T_CLIENTE.IDDIST%TYPE
+  )
+  is
+  begin
+    insert into T_CLIENTE (Cliente_Id,Cliente_Cod,Nombre,Apellidos,Sexo,FechaNacimiento,Telefono,Email,Estado,Direccion,idDepa,idProv,idDist )
+    values (p_cliente_id,p_cliente_cod,p_nombre,p_apellidos,p_sexo,p_fechanacimiento,p_telefono,p_email,p_estado,p_direccion,p_iddepa,p_idprov,p_iddist);
+  dbms_output.put_line('Se agrego un nuevo cliente');
+  COMMIT;
+  end sp_agregar;
+  
+  --ELIMINAR CLIENTE
+  procedure sp_eliminar (p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE)
+  is
+  begin
+    delete from T_CLIENTE
+    where Cliente_Cod = p_cliente_cod;
+    commit;
+    dbms_output.put_line('Se elimino el cliente');
+    exception
+    when others then
+    rollback;
+    dbms_output.put_line('Se cancelo la eliminacion del cliente con codigo :' || p_cliente_cod);
+  end sp_eliminar;
+  
+  --MODIFICAR CLIENTE
+  procedure sp_modificar(
+  p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE,
+  p_telefono T_CLIENTE.TELEFONO%TYPE,
+  p_email T_CLIENTE.EMAIL%TYPE,
+  p_direccion T_CLIENTE.DIRECCION%TYPE,
+  p_iddepa T_CLIENTE.IDDEPA%TYPE,
+  p_idprov T_CLIENTE.IDPROV%TYPE,
+  p_iddist T_CLIENTE.IDDIST%TYPE)
+  is
+  begin
+    update T_CLIENTE
+    set Telefono = p_telefono, Email = p_email, Direccion = p_direccion,idDepa = p_iddepa, idProv = p_idprov,idDist = p_iddist
+    where Cliente_Cod = p_cliente_cod;
+    commit;
+    dbms_output.put_line('Se actualizo el cliente');
+    exception
+    when others then
+    rollback;
+    dbms_output.put_line('No se actualizo el cliente');
+  end sp_modificar;
+  
+  --eliminacion del cliente
+  procedure sp_consulta (p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE)
+  is
+    --p_cliente_id T_CLIENTE.CLIENTE_ID%TYPE,
+    --p_cliente_cod T_CLIENTE.CLIENTE_COD%TYPE;
+    p_nombre T_CLIENTE.NOMBRE%TYPE;
+    p_apellidos T_CLIENTE.APELLIDOS%TYPE;
+    --p_sexo T_CLIENTE.SEXO%TYPE,
+    p_fechanacimiento T_CLIENTE.FECHANACIMIENTO%TYPE;
+    p_telefono T_CLIENTE.TELEFONO%TYPE;
+    p_email T_CLIENTE.EMAIL%TYPE;
+    p_direccion T_CLIENTE.DIRECCION%TYPE;
+    --p_iddepa T_CLIENTE.IDDEPA%TYPE,
+    --p_idprov T_CLIENTE.IDPROV%TYPE,
+    --p_iddist T_CLIENTE.IDDIST%TYPE
+     begin
+     select nombre,apellidos,fechanacimiento,telefono,email,direccion into
+     p_nombre,p_apellidos,p_fechanacimiento,p_telefono,p_email,p_direccion
+     from T_CLIENTE
+     where cliente_cod = p_cliente_cod;
+     --dbms_output.put_line('Codigo: ' || p_cliente_cod);
+     dbms_output.put_line('Nombre: ' || p_nombre);
+     dbms_output.put_line('Apellidos: ' || p_apellidos);
+     dbms_output.put_line('Fec Naci: ' || p_fechanacimiento);
+     dbms_output.put_line('Telefono: ' || p_telefono);
+     dbms_output.put_line('Email: ' || p_email);
+     dbms_output.put_line('Direccion: ' || p_direccion);
+     
+  end sp_consulta;
+  
+  end pack_mant_cli;
+
+
+
+
+
+begin
+ pack_mant_cli.sp_modificar(1900002,'4421210','ejemplo9@gmail.com','casuarinas',15,127,1291);
+end;
+
+
+begin
+  pack_mant_cli.sp_eliminar(1900002);
+end;
+
+
+begin
+   PACK_MANT_CLI.SP_CONSULTA('1900001');
+end;
+
+
+--insert problemas
+
+BEGIN
+  pack_mant_cli.SP_AGREGAR(3,'1900003','CLAUDIA','ZAPATA LLANOS','F',12/12/1995,'1115555','CLAUDIA@GMAIL.COM','A','LICENCIADOS CALLA 2',15,127,472);
+END;
+
+
+

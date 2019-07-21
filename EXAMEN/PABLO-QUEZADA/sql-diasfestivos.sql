@@ -1,0 +1,56 @@
+
+CREATE TABLE DIAS_FESTIVOS(  
+"CODI_DIA" NUMBER NOT NULL ENABLE, 
+"DDESC_DIA" DATE, 
+"VDESC_DIA" VARCHAR2(100), 
+"NESTA_EST" NUMBER, 
+CONSTRAINT "CP_DIAS_FESTIVOS" PRIMARY KEY ("CODI_DIA")
+);
+
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (79, to_date('01-01-2019', 'dd-mm-yyyy'), 'AÑO NUEVO', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (81, to_date('18-04-2019', 'dd-mm-yyyy'), 'JUEVES SANTO', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (82, to_date('19-04-2019', 'dd-mm-yyyy'), 'VIERNES SANTO', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (83, to_date('21-04-2019', 'dd-mm-yyyy'), 'DOMINGO DE RESURECCIÓN', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (84, to_date('01-05-2019', 'dd-mm-yyyy'), 'DÍA DEL TRABAJO', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (85, to_date('29-06-2019', 'dd-mm-yyyy'), 'SAN PEDRO Y SAN PABLO', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (86, to_date('28-07-2019', 'dd-mm-yyyy'), 'FIESTAS PATRIAS', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (87, to_date('30-07-2019', 'dd-mm-yyyy'), 'FERÍADO NO LABORABLE COMPENSABLE DECRETADO POR EL GOBIERNO', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (88, to_date('29-08-2019', 'dd-mm-yyyy'), 'FERÍADO NO LABORABLE COMPENSABLE DECRETADO POR EL GOBIERNO', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (89, to_date('30-08-2019', 'dd-mm-yyyy'), 'SANTA ROSA DE LIMA', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (90, to_date('08-10-2019', 'dd-mm-yyyy'), 'COMBATE DE ANGAMOS', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (91, to_date('31-10-2019', 'dd-mm-yyyy'), 'FERÍADO NO LABORABLE COMPENSABLE DECRETADO POR EL GOBIERNO', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (92, to_date('01-11-2019', 'dd-mm-yyyy'), 'DÍA DE TODOS LOS SANTOS', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (93, to_date('08-12-2019', 'dd-mm-yyyy'), 'INMACULADA CONCEPCIÓN', 1);
+
+insert into DIAS_FESTIVOS (CODI_DIA, DDESC_DIA, VDESC_DIA, NESTA_EST)
+values (94, to_date('25-12-2019', 'dd-mm-yyyy'), 'NAVIDAD', 1);
+
+
