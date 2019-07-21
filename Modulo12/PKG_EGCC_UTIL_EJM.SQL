@@ -1,4 +1,3 @@
-﻿
 
 DECLARE
  
@@ -64,7 +63,7 @@ EXCEPTION
         P_ESTADO := SQLERRM;
         ROLLBACK;
 END;
-
+/
 
 
 SELECT * FROM SCOTT.EMP;
